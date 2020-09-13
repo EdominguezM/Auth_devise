@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-8 col-sm-10 col-md-10">
+    <h1>Usuarios</h1>
+  </div>
+  <div class="col-xs-4 col-sm-2 col-md-2">
+    <%= link_to 'New user', new_user_registration_path, class: "btn btn-info btn-sm" %>
+  </div>
+</div>
+
+<div class="row">
+  <% @users.reverse.each do |user| %>
+    <div class="col-sm-6 col-md-4">
+     
+     <h3><%=user.name %></h3>
+      
+      <p><%= link_to 'Edit', edit_user_registration_path(user), class: "btn btn-warning" %> </p>
+      <p><%= link_to 'Destroy',cancel_user_registration_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></p>     
+     
+      
+    </div>
+  <% end %>
+</div>
+
+
+<br>
